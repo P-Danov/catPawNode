@@ -1,0 +1,19 @@
+{
+  "name": "catpawgamee",
+  "version": "1.0.0",
+  "description": "",
+  "main": "catPawMain.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon catPawServer.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "express": "^4.18.3",
+    "mongoose": "^8.2.2"
+  }
+}
