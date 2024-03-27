@@ -4,6 +4,7 @@
   "description": "",
   "main": "catPawMain.js",
   "scripts": {
+    "start": "node catPawServer.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon catPawServer.js"
   },
