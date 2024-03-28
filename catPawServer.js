@@ -40,6 +40,9 @@ app.get("/home",async(req,res)=>{
         console.log('1')
 
             app.get("/scoresList",async(req,res)=>{
+                res.setHeader('Access-Control-Allow-Origin', '*');
+                //res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); 
+                //res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); 
             const importedScore = await Score.find();
             res.send(importedScore) 
             console.log(importedScore)
