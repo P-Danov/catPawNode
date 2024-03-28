@@ -28,7 +28,7 @@ let scoreList = [{scoreName:'Jeden',score:1},{scoreName:'Dwa',score:2},{scoreNam
 
 const getScores = async () => {
     const res = await fetch("http://localhost:3000/scoresList",{mode: 'no-cors',});
-    let updatedScore = await res.json()
+    let updatedScore = res.json()
     console.log(updatedScore)
     scoreList = [{scoreName:updatedScore[0].scoreName,score:updatedScore[0].score},
                 {scoreName:updatedScore[1].scoreName,score:updatedScore[1].score},
