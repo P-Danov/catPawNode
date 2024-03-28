@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose')
 const Score = require('./score.model.js')
-const port = process.env.PORT || 10000;
+const port = process.env.PORT || 3000;
 // let jsdom = require('jsdom');
 // const { JSDOM } = jsdom;
 
