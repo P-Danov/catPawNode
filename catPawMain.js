@@ -27,7 +27,7 @@ let allLoaded = false
 let scoreList = [{scoreName:'Jeden',score:1},{scoreName:'Dwa',score:2},{scoreName:'Trzy',score:3}]
 
 const getScores = async () => {
-    const res = await fetch("https://cat-paw-node-fw36.vercel.app/scoresList",{mode: 'no-cors'});
+    const res = await fetch("/scoresList",{mode: 'no-cors'});
     let updatedScore = await res.json()
     console.log(updatedScore)
     scoreList = [{scoreName:updatedScore[0].scoreName,score:updatedScore[0].score},
