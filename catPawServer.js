@@ -3,7 +3,7 @@ const cors = require('cors');
 const app = express();
 const mongoose = require('mongoose')
 const Score = require('./score.model.js')
-const port = process.env.PORT || 4000;
+const port = 3000;
 
 
 
