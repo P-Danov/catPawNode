@@ -5,7 +5,7 @@ const Score = require('./score.model.js')
 let jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 
-const { document } = (new JSDOM('')).window;
+const { document } = (new JSDOM('index.html')).window;
 global.document = document;
 
 mongoose.connect('mongodb+srv://mrocznymrok:Killer666666@meokdatabase.tqetnqk.mongodb.net/?retryWrites=true&w=majority&appName=meokDatabase')
