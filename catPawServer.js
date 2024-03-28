@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose')
 const Score = require('./score.model.js')
-const port = 3000;
+const port = process.env.PORT || 4000;
 // let jsdom = require('jsdom');
 // const { JSDOM } = jsdom;
 
@@ -24,6 +24,12 @@ mongoose.connect('mongodb+srv://mrocznymrok:Killer666666@meokdatabase.tqetnqk.mo
 
 app.use(express.static('public'));
 app.use(express.json());
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    next();
+  })
 
 app.get("/home",async(req,res)=>{
     try{
