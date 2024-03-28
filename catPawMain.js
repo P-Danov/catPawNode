@@ -27,8 +27,8 @@ let allLoaded = false
 let scoreList = [{scoreName:'Jeden',score:1},{scoreName:'Dwa',score:2},{scoreName:'Trzy',score:3}]
 
 const getScores = async () => {
-    const res = await fetch("http://localhost:3000/scoresList",{mode: 'no-cors',}){
-        let updatedScore = await res.json()
+    const res = await fetch("http://localhost:3000/scoresList");
+    let updatedScore = await res.json()
     console.log(updatedScore)
     scoreList = [{scoreName:updatedScore[0].scoreName,score:updatedScore[0].score},
                 {scoreName:updatedScore[1].scoreName,score:updatedScore[1].score},
@@ -38,8 +38,6 @@ const getScores = async () => {
                     document.getElementById('score'+i).innerHTML = scoreList[i].scoreName + " : " + scoreList[i].score
                 }
   }
-    }
-
   getScores();
 
 const meowSound1 = new Audio('sounds/meow1.wav');
