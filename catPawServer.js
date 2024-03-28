@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose')
 const Score = require('./score.model.js')
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 // let jsdom = require('jsdom');
 // const { JSDOM } = jsdom;
 
@@ -14,7 +14,7 @@ mongoose.connect('mongodb+srv://mrocznymrok:Killer666666@meokdatabase.tqetnqk.mo
 .then(()=>{
     console.log('connected to meok db')
     app.listen(port,async()=>{
-        console.log('server is running on port')
+        console.log('server is running on port '+ port)
         
     });
 })

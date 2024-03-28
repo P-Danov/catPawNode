@@ -1,4 +1,5 @@
 const canvas = document.getElementById("canvas");
+console.log(document)
 const c = canvas.getContext("2d");
 
   //canvas.width = 1224;
@@ -21,16 +22,23 @@ let catPawsArray = []
 let catPawsTraceArray = []
 let catPawScoreCount = 0
 let catPawCurrntScore = 0
+let allLoaded = false
 
-const scoreList = [{scoreName:'asdasd',score:4},{scoreName:'fghfh',score:88},{scoreName:'name',score:0}]
+let scoreList = [{scoreName:'Jeden',score:1},{scoreName:'Dwa',score:2},{scoreName:'Trzy',score:3}]
 
-function sortAndDisplayHiscore(){
-
-}
-scoreList.sort((a, b) => b.score - a.score);
-for(i=0;i<scoreList.length;i++){ 
-    document.getElementById('score'+i).innerHTML = scoreList[i].scoreName + " : " + scoreList[i].score
-}
+const getScores = async () => {
+    const res = await fetch("http://localhost:3000/scoresList");
+    let updatedScore = await res.json()
+    console.log(updatedScore)
+    scoreList = [{scoreName:updatedScore[0].scoreName,score:updatedScore[0].score},
+                {scoreName:updatedScore[1].scoreName,score:updatedScore[1].score},
+                {scoreName:updatedScore[2].scoreName,score:updatedScore[2].score}]
+                scoreList.sort((a, b) => b.score - a.score);
+                for(i=0;i<scoreList.length;i++){ 
+                    document.getElementById('score'+i).innerHTML = scoreList[i].scoreName + " : " + scoreList[i].score
+                }
+  }
+  getScores();
 
 const meowSound1 = new Audio('sounds/meow1.wav');
 const meowSound2 = new Audio('sounds/meow2.wav');
@@ -120,12 +128,23 @@ function submitScore(){
     currentUsernameScore = {scoreName:catPawFormUsername,score:catPawScoreCount}
     scoreList.push(currentUsernameScore)
     scoreList.sort((a, b) => b.score - a.score);
+    let updateInfo = {oldObject:scoreList[3],newObject: currentUsernameScore}
+    console.log(updateInfo)
     scoreList.pop()
     for(i=0;i<scoreList.length;i++){ 
         document.getElementById('score'+i).innerHTML = scoreList[i].scoreName + " : " + scoreList[i].score
     }
+    fetch('/scores',{
+        method:"POST",
+        headers:{
+            "Content-type":"application/json"
+        },
+        //body:JSON.stringify(scoreList) ,
+        body:JSON.stringify(updateInfo) 
+    })
     restart()
     stopAll = false
+    
 }
 function animate(){
     c.clearRect(0,0,canvas.width,canvas.height)
@@ -154,7 +173,9 @@ window.onresize = function()
 
 }
 animate();
-
+if(allLoaded){
+    
+}
 // const fs = require('fs');
 // fs.readFile('./score.txt','utf8',(err,data)=>{
 //     if(err){
