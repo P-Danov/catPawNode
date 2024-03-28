@@ -2,17 +2,19 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose')
 const Score = require('./score.model.js')
-let jsdom = require('jsdom');
-const { JSDOM } = jsdom;
+const port = process.env.PORT || 4000;
+// let jsdom = require('jsdom');
+// const { JSDOM } = jsdom;
 
-const { document } = (new JSDOM('index.html')).window;
-global.document = document;
+// const { document } = (new JSDOM('index.html')).window;
+// global.document = document;
+// console.log(JSDOM)
 
 mongoose.connect('mongodb+srv://mrocznymrok:Killer666666@meokdatabase.tqetnqk.mongodb.net/?retryWrites=true&w=majority&appName=meokDatabase')
 .then(()=>{
     console.log('connected to meok db')
-    app.listen(3000,async()=>{
-        console.log('server is running on port 3000')
+    app.listen(port,async()=>{
+        console.log('server is running on port')
         
     });
 })
