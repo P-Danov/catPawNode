@@ -9,7 +9,7 @@ const port = 3000;
 
 const corsOptions = {
     credentials: true,
-    origin: ['https://www.mongodb.com/', 'http://localhost:80'] // Whitelist the domains you want to allow
+    origin: ['www.mongodb.com/', 'http://localhost:80'] // Whitelist the domains you want to allow
 };
 app.use(cors(corsOptions))
 
@@ -31,7 +31,7 @@ app.use(express.json());
 
 
 app.get("/home",async(req,res)=>{
-     res.setHeader("Access-Control-Allow-Origin", "https://www.mongodb.com/");
+     res.setHeader("Access-Control-Allow-Origin", "www.mongodb.com/");
      res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
      res.setHeader("Access-Control-Allow-Headers", "Content-Type");
      res.setHeader('Access-Control-Allow-Credentials', true);
@@ -41,7 +41,7 @@ app.get("/home",async(req,res)=>{
         console.log('1')
 
             app.get("/scoresList",async(req,res)=>{
-                res.setHeader('Access-Control-Allow-Origin', 'https://www.mongodb.com/');
+                res.setHeader('Access-Control-Allow-Origin', 'www.mongodb.com/');
                 res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); 
                 res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); 
                 res.setHeader('Access-Control-Allow-Credentials', true);
