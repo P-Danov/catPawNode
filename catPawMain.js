@@ -1,5 +1,4 @@
 const canvas = document.getElementById("canvas");
-console.log(document)
 const c = canvas.getContext("2d");
 
   //canvas.width = 1224;
