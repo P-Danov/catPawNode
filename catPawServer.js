@@ -3,13 +3,13 @@ const cors = require('cors');
 const app = express();
 const mongoose = require('mongoose')
 const Score = require('./score.model.js')
-const port = 3000;
+const port =  3000;
 
 
 
 const corsOptions = {
     credentials: true,
-    origin: ['mongodb+srv://mrocznymrok:Killer666666@meokdatabase.tqetnqk.mongodb.net/?retryWrites=true&w=majority&appName=meokDatabase', 'http://localhost:80'] // Whitelist the domains you want to allow
+    origin: ['www.mongodb.com/'] // Whitelist the domains you want to allow
 };
 app.use(cors(corsOptions))
 
@@ -31,20 +31,18 @@ app.use(express.json());
 
 
 app.get("/home",async(req,res)=>{
-     res.setHeader("Access-Control-Allow-Origin", "mongodb+srv://mrocznymrok:Killer666666@meokdatabase.tqetnqk.mongodb.net/?retryWrites=true&w=majority&appName=meokDatabase");
-     res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
-     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-     res.setHeader('Access-Control-Allow-Credentials', true);
+    // res.setHeader("Access-Control-Allow-Origin", "*");
+    // res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
+    // res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     try{
         
         res.sendFile("index.html", { root: __dirname})
         console.log('1')
 
             app.get("/scoresList",async(req,res)=>{
-                res.setHeader('Access-Control-Allow-Origin', 'mongodb+srv://mrocznymrok:Killer666666@meokdatabase.tqetnqk.mongodb.net/?retryWrites=true&w=majority&appName=meokDatabase');
-                res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); 
-                res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); 
-                res.setHeader('Access-Control-Allow-Credentials', true);
+                // res.setHeader('Access-Control-Allow-Origin', '*');
+                // res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); 
+                // res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); 
             const importedScore = await Score.find();
             res.send(importedScore) 
             console.log(importedScore)
