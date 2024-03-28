@@ -7,11 +7,11 @@ const port =  3000;
 
 
 
-const corsOptions = {
-    credentials: true,
-    origin: ['www.mongodb.com/'] // Whitelist the domains you want to allow
-};
-app.use(cors(corsOptions))
+//const corsOptions = {
+//    credentials: true,
+//    origin: ['www.mongodb.com/'] // Whitelist the domains you want to allow
+//};
+//app.use(cors(corsOptions))
 
 mongoose.connect('mongodb+srv://mrocznymrok:Killer666666@meokdatabase.tqetnqk.mongodb.net/?retryWrites=true&w=majority&appName=meokDatabase')
 .then(()=>{
