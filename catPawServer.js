@@ -31,9 +31,10 @@ app.use(express.json());
 
 
 app.get("/home",async(req,res)=>{
-    // res.setHeader("Access-Control-Allow-Origin", "*");
-    // res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
-    // res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+     res.setHeader("Access-Control-Allow-Origin", "*");
+     res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
+     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+     res.setHeader('Access-Control-Allow-Credentials', true);
     try{
         
         res.sendFile("index.html", { root: __dirname})
@@ -43,6 +44,7 @@ app.get("/home",async(req,res)=>{
                 res.setHeader('Access-Control-Allow-Origin', '*');
                 res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); 
                 res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); 
+                res.setHeader('Access-Control-Allow-Credentials', true);
             const importedScore = await Score.find();
             res.send(importedScore) 
             console.log(importedScore)
