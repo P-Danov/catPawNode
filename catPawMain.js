@@ -133,7 +133,7 @@ function submitScore(){
     for(i=0;i<scoreList.length;i++){ 
         document.getElementById('score'+i).innerHTML = scoreList[i].scoreName + " : " + scoreList[i].score
     }
-    fetch('/scores',{
+    fetch('scores',{
         method:"POST",
         headers:{
             "Content-type":"application/json"
