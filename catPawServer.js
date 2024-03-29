@@ -13,7 +13,8 @@ const port =  3000;
 //};
 //app.use(cors(corsOptions))
 
-mongoose.connect('mongodb+srv://mrocznymrok:Killer666666@meokdatabase.tqetnqk.mongodb.net/?retryWrites=true&w=majority&appName=meokDatabase')
+mongoose.connect('mongodb+srv://vercel-admin-user:hySLO2FJBuNhBJxZ@meokdatabase.tqetnqk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+//mongoose.connect('mongodb+srv://mrocznymrok:Killer666666@meokdatabase.tqetnqk.mongodb.net/?retryWrites=true&w=majority&appName=meokDatabase')
 .then(()=>{
     console.log('connected to meok db')
     app.listen(port,async()=>{
