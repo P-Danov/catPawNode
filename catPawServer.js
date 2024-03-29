@@ -37,7 +37,7 @@ app.get("/home",async(req,res)=>{
     // res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     try{
         
-        res.sendFile("index.html", { root: __dirname})
+        //res.sendFile("index.html", { root: __dirname})
         console.log('1')
 
             app.get("/scoresList",async(req,res)=>{
