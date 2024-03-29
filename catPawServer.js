@@ -1,9 +1,9 @@
-const express = require('express');
-const cors = require('cors');
-const app = express();
-const mongoose = require('mongoose')
-const Score = require('./score.model.js')
-const port =  3000;
+//const express = require('express');
+//const cors = require('cors');
+//const app = express();
+//const mongoose = require('mongoose')
+//const Score = require('./score.model.js')
+//const port =  3000;
 
 
 
