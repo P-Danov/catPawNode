@@ -3,7 +3,7 @@ const cors = require('cors');
 const app = express();
 const mongoose = require('mongoose')
 const Score = require('./score.model.js')
-const port =  4000;
+const port = process.env.PORT || 4000;
 
 
 
@@ -27,7 +27,7 @@ app.use(express.json());
 
 
 
-app.get("/home",async(req,res)=>{
+app.get("/",async(req,res)=>{
 
     try{
         
