@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <title>Cat Paw</title>
+</head>
+
+<body>
+    <div>
+        <canvas id="canvas"></canvas>
+        <p id="score">Cat Paws : 0</p>
+        <button onclick="restart()">RESTART</button>
+        <button onclick="restartAndSaveHiscore()">SAVE HISCORE AND RESTART</button>
+    </div>
+
+    <form id="form" onsubmit="return false">
+        <input id="userName" type="text" placeholder="WRITE YOUR NAME">
+        <input id="save" type="submit" value="SAVE" onclick="submitScore()" />
+    </form>
+     
+    <div id="hiscores">
+        <h5>HISCORES:
+            <li id="score0">NAME:name Score:0</li>
+            <li id="score1">NAME:name Score:0</li>
+            <li id="score2">NAME:name Score:0</li>
+        </h5>
+
+    </div>
+    <script src="catPawMain.js"></script>
+    <link rel="stylesheet" href="catPawMain.css" type="text/css" >
+    
+</body>
+</html>
