@@ -25,7 +25,7 @@ mongoose.connect('mongodb+srv://mrocznymrok:Killer666666@meokdatabase.tqetnqk.mo
     console.log('connection fail')
 })
 
-app.use(express.static('public'));
+//app.use(express.static('public'));
 app.use(express.json());
 
 
